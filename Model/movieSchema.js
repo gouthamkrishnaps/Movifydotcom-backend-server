@@ -39,7 +39,7 @@ const movieSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    languages:{
+    language:{
         type:String,
         require:true
     },
