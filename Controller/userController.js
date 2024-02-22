@@ -55,3 +55,26 @@ exports.login = async(req,res)=>{
         res.status(401).json('login failed due to ',err)
     }
 }
+
+//logic to get users
+exports.getAllUsersController = async(req,res)=>{
+    try {
+        const allUsers = await users.find()
+        res.status(200).json(allUsers)
+
+    } catch(err){
+        res.status(401).json(`Request Failed due to ${err}`)
+    }
+}
+
+//delete user
+exports.deleteUserController = async(req,res)=>{
+    const {id} = req.params
+
+    try {
+        const removeUser = await users.findByIdAndDelete({_id:id})
+        res.status(200).json(removeUser)
+    } catch (err) {
+        res.status(401).json(err)
+    }
+}

@@ -45,5 +45,13 @@ const theatreController = require('../Controller/theatreController')
     //7) delete theatre
     router.delete('/theatre/delete/:id',theatreController.deleteTheatreController)
 
+    // 8) get users
+    router.get('/users/fetch',userController.getAllUsersController)
+
+    //7) delete user
+    router.delete('/user/delete/:id',userController.deleteUserController)
+
+    
+
 // 4) Export router
 module.exports = router
